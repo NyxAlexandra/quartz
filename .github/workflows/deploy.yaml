@@ -30,7 +30,6 @@ jobs:
         run: |
           rm -rf content/.git
           git add .
-          git commit -m "test"
 
 #       - name: Fetch private vault
 #         uses: GuillaumeFalourd/clone-github-repo-action@v2
