@@ -12,6 +12,19 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          
+      - name: clone submodule
+        uses: actions/checkout@v2
+        with:
+          repository: alex-ahr/vault
+          path: content
+          ssh-key: ${{ secrets.SSH_KEY }}
+          persist-credentials: true
+
+      - name: checkout submodule
+        run: |
+          git submodule init
+          git submodule update
 
 #       - name: Fetch private vault
 #         uses: GuillaumeFalourd/clone-github-repo-action@v2
