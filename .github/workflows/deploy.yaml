@@ -25,6 +25,12 @@ jobs:
         run: |
           git submodule init
           git submodule update
+      
+      - name: hack solution to clean up working dir
+        run: |
+          rm -rf content/.git
+          git add .
+          git commit -m "test"
 
 #       - name: Fetch private vault
 #         uses: GuillaumeFalourd/clone-github-repo-action@v2
