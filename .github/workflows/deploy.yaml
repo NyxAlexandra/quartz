@@ -31,20 +31,6 @@ jobs:
           rm -rf content/.git
           git add .
 
-#       - name: Fetch private vault
-#         uses: GuillaumeFalourd/clone-github-repo-action@v2
-#         with:
-#           owner: 'alex-ahr'
-#           repository: 'vault'
-#           access-token: ${{ secrets.PERSONAL_KEY }}
-      
-#       - name: Clean up cloned files
-#         run: |
-#           # hardcoded for now
-#           rm -rf vault/.git
-#           rm -rf vault/templates
-#           mv vault content/
-
       - name: Build Link Index
         uses: jackyzha0/hugo-obsidian@v2.18
         with:
